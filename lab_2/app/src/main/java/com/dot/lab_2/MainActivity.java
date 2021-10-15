@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,14 +28,27 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
             {
 
+                ImageView imageView = findViewById(R.id.imageView2);
+                TextView textView = findViewById(R.id.textView);
+
                 Spinner spinner = (Spinner) findViewById(R.id.spinner);
                 if (spinner.getSelectedItemPosition() == 0) {
-                    ImageView imageView = findViewById(R.id.imageView2);
                     imageView.setImageResource(R.drawable.loki_1);
-                } else if (spinner.getSelectedItemPosition() == 1) {
-                    ImageView imageView = findViewById(R.id.imageView2);
+                }
+                else if (spinner.getSelectedItemPosition() == 1) {
                     imageView.setImageResource(R.drawable.t_1);
                 }
+                else if (spinner.getSelectedItemPosition() == 2) {
+                    imageView.setImageResource(R.drawable.t_1);
+                }
+                else if (spinner.getSelectedItemPosition() == 2) {
+                    imageView.setImageResource(R.drawable.t_1);
+                }
+                textView.setText(spinner.getSelectedItem().toString());
+
+
+
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
