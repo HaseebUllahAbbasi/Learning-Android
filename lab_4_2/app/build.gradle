@@ -7,7 +7,7 @@ android {
     buildToolsVersion '30.0.3'
 
     defaultConfig {
-        applicationId "com.dot.lab_3_2"
+        applicationId "com.dot.lab_4_2"
         minSdkVersion 16
         targetSdkVersion 31
         versionCode 1
