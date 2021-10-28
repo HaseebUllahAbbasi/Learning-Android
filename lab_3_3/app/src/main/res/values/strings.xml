@@ -3,4 +3,13 @@
     <string name="hatbox">hatBox</string>
     <string name="glasses">Glasses</string>
     <string name="checkbox">CheckBox</string>
+    <string name="shoesBox">shoesBox</string>
+
+    <string name="teethBox">teethBox</string>
+    <string name="handsBox">handsBox</string>
+    <string name="eyesbox">eyesBox</string>
+    <string name="must">Mustache</string>
+    <string name="earsBox">earsBox</string>
+
 </resources>
+

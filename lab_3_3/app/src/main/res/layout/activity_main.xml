@@ -7,39 +7,61 @@
     tools:context=".MainActivity">
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/handsBox"
         android:layout_width="118dp"
         android:layout_height="47dp"
-        android:text="@string/checkbox"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="483dp"
+        android:text="@string/handsBox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.723"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.707"
         tools:ignore="MissingConstraints" />
 
     <CheckBox
-        android:id="@+id/checkBox7"
+        android:id="@+id/mustacheBox"
         android:layout_width="118dp"
         android:layout_height="46dp"
-        android:text="@string/checkbox"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="579dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/must"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintStart_toEndOf="@+id/shoesBox"
+        app:layout_constraintTop_toTopOf="@+id/eyesBox"
         tools:ignore="MissingConstraints" />
 
     <CheckBox
-        android:id="@+id/checkBox8"
+        android:id="@+id/earsBox"
         android:layout_width="117dp"
         android:layout_height="48dp"
-        android:text="@string/checkbox"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="625dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/earsBox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/teethBox"
+        app:layout_constraintTop_toTopOf="@+id/checkBox7"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/eyesBox"
         android:layout_width="118dp"
         android:layout_height="49dp"
-        android:text="@string/checkbox"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="531dp"
+        android:layout_marginTop="47dp"
+        android:text="@string/eyesbox"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toEndOf="@+id/glassesBox"
+        app:layout_constraintTop_toTopOf="@+id/handsBox"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -83,21 +105,30 @@
         tools:ignore="MissingConstraints" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/shoesBox"
         android:layout_width="118dp"
         android:layout_height="46dp"
-        android:text="@string/checkbox"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="578dp"
+        android:text="@string/shoesBox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845"
         tools:ignore="MissingConstraints" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/teethBox"
         android:layout_width="117dp"
         android:layout_height="48dp"
-        android:text="@string/checkbox"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="624dp"
+        android:layout_marginTop="46dp"
+        android:text="@string/teethBox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shoesBox"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <ImageView
