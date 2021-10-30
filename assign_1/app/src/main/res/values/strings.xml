@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HangMan Game</string>
+    <string name="new_game">New Game</string>
+    <string name="howToPlay">How to Play</string>
+</resources>

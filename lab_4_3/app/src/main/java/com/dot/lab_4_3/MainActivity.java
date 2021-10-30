@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolate =  findViewById(R.id.chocolate);
         CheckBox cream =  findViewById(R.id.cream);
         if(cream.isChecked())
-            Log.d(TAG, "Cream is Checked: ");
+            Log.d(TAG, "Cream is Added: ");
         if(chocolate.isChecked())
-            Log.d(TAG, "chocolate is Checked: ");
-        Log.d(TAG, "calculate_bill: "+ quantity );
+            Log.d(TAG, "Chocolate is Added: ");
+        Log.d(TAG, "calculate_bill: "+ quantity*100 );
     }
 
     public void Add(View view)
@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
         if(quantity>=0)
         {
             quantity--;
-
-
         }
         TextView textView = findViewById(R.id.number_qty);
         textView.setText(quantity.toString());

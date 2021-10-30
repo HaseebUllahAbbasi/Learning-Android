@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A"
+    android:background="#C8BB6B"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -67,14 +67,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#E91E63"
+            android:background="#9F7483"
             android:onClick="Sub"
             android:text="-"
             android:textSize="24sp"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="#1D5F98"
+            app:cornerRadius="20dp" />
 
         <TextView
-                android:id="@+id/number_qty"
+            android:id="@+id/number_qty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -95,7 +96,8 @@
             android:onClick="Add"
             android:text="+"
             android:textSize="24sp"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="#1D5F98"
+            app:cornerRadius="20dp" />
     </LinearLayout>
 
     <Button
@@ -105,7 +107,8 @@
         android:layout_gravity="center"
         android:onClick="calculate_bill"
         android:text="Order"
-        app:backgroundTint="#F44336" />
+        app:backgroundTint="#F44336"
+        app:cornerRadius="10dp" />
 
     <TextView
         android:id="@+id/textView5"
