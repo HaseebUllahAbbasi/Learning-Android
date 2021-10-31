@@ -23,6 +23,7 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:text="OKOKO?"
+        android:letterSpacing="0.2"
         android:textSize="36sp" />
 
     <ImageView
