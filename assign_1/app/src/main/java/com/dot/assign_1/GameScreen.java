@@ -27,7 +27,6 @@ public class GameScreen extends AppCompatActivity {
     Integer index;
     private static final String TAG = "MSG";
     ArrayList<String> words;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,13 +61,15 @@ public class GameScreen extends AppCompatActivity {
 
     public void keyPressed(View view)
     {
-        if(roundLeft>0)
+        if(roundLeft>0 || corrected==word_find.length())
         {
             Button button = (Button) view;
             CharSequence text = button.getText();
-
             if (word_find.contains(text))
             {
+
+                    Toast.makeText(this,"Well done talian honi chahiye",Toast.LENGTH_LONG);
+
                 corrected++;
                 int counter_index = 0;
                 for (char character : word_find.toCharArray())
@@ -87,7 +88,9 @@ public class GameScreen extends AppCompatActivity {
                 {
                     Toast.makeText(this,"You have Lost",Toast.LENGTH_LONG);
                 }
-            } else
+            }
+            else
+
                 {
                     roundLeft--;
                 button.setVisibility(View.INVISIBLE);
@@ -96,7 +99,6 @@ public class GameScreen extends AppCompatActivity {
             button.setClickable(false);
             TextView roundLeft_TextView = findViewById(R.id.guess);
             roundLeft_TextView.setText( "Guesses Left :"+ roundLeft.toString());
-
         }
 
         if(roundLeft==0)

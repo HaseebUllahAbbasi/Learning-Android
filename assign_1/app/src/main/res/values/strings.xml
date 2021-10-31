@@ -2,4 +2,6 @@
     <string name="app_name">HangMan Game</string>
     <string name="new_game">New Game</string>
     <string name="howToPlay">How to Play</string>
+    <string name="instructions">Press the New Game Button, Then A random word will be selected from the dictionary all you have to do you gave to select the letter of that random word  , you are given 10 chances if you make a mistake , if you complete the word before 10 guesses then you won otherwise you lose </string>
+
 </resources>
