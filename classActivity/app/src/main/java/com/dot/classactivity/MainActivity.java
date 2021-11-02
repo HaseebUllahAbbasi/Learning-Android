@@ -22,13 +22,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
-    ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
-            new ActivityResultCallback<Uri>() {
-                @Override
-                public void onActivityResult(Uri uri) {
-                    // Handle the returned Uri
-                }
-            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -40,6 +33,7 @@ public class MainActivity extends AppCompatActivity
     public void clicked(View view)
     {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA  )==PackageManager.PERMISSION_GRANTED)
         {
             startActivityForResult(intent,200);
