@@ -9,7 +9,7 @@
     tools:context=".updateActivity">
 
     <EditText
-        android:id="@+id/updateTextField"
+        android:id="@+id/updateId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -17,7 +17,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/updateName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -25,17 +25,18 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/updatePhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Phone"
         android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="updateData"
         android:text="Update" />
 
     <TextView

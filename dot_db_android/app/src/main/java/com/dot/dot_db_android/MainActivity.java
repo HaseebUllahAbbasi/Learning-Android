@@ -8,7 +8,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.dot.dot_db_android.data.DataBaseHelper;
+import com.dot.dot_db_android.util.Util;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -43,7 +47,7 @@ public class MainActivity extends AppCompatActivity
 
     public void selectButton(View view)
     {
-        Intent intent = new Intent(this, ShowAllActivity.class);
+        Intent intent = new Intent(this, ViewAll.class);
         startActivity(intent);
     }
 
@@ -60,14 +64,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void updateScreen(View view) {
-
         Intent intent = new Intent(this, updateActivity.class);
         startActivity(intent);
     }
 
     public void countAll(View view)
     {
-
+        DataBaseHelper dataBaseHelper = new DataBaseHelper(this, Util.DATABASE_NAME,null,Util.DATABASE_VERSION);
+        Integer count = dataBaseHelper.getCount();
+        TextView textView =  findViewById(R.id.textCountRecords);
+        textView.setText("There Are "+ count+ " Records");
     }
 
     public void insertScreen(View view) {

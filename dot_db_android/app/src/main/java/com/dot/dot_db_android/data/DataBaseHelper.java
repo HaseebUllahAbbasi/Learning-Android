@@ -1,11 +1,12 @@
 package com.dot.dot_db_android.data;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.icu.util.UniversalTimeScale;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -16,19 +17,23 @@ import com.dot.dot_db_android.util.Util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBHelper  extends SQLiteOpenHelper
+public class DataBaseHelper extends SQLiteOpenHelper
 {
 
-    public DBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, Util.DATABASE_NAME, null, Util.DATABASE_VERSION);
+    private static final String TAG = "DataBase Helper Class Log :" ;
 
+    public DataBaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version)
+    {
+        super(context, name, null, version);
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String CREATE_CONTACT_TABLE = "CREATE TABLE "+ Util.DATABASE_NAME+ "( "
-                + Util.KEY_ID +" INTEGER PRIMARY KEY,"+ Util.KEY_NAME + " TEXT,"+ Util.KEY_PHONE+ "TEXT )";
+        String CREATE_CONTACT_TABLE = "CREATE TABLE IF NOT EXISTS  "+ Util.DATABASE_TABLE_NAME+ "( "
+                + Util.KEY_ID +" INTEGER PRIMARY KEY,"+ Util.KEY_NAME + " TEXT,"+ Util.KEY_PHONE+ " TEXT )";
         sqLiteDatabase.execSQL(CREATE_CONTACT_TABLE);
+        Log.d(TAG, "onCreate: db created amd table created" );
     }
 
     @Override
@@ -38,14 +43,16 @@ public class DBHelper  extends SQLiteOpenHelper
 
         onCreate(sqLiteDatabase);
     }
-    public void addContact(Contact contact)
+    public int addContact(Contact contact)
     {
+
         SQLiteDatabase database = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Util.KEY_NAME,contact.getName());
         contentValues.put(Util.KEY_PHONE,contact.getPhone());
-        database.insert(Util.DATABASE_TABLE_NAME,null,contentValues);
+        long insert = database.insert(Util.DATABASE_TABLE_NAME, null, contentValues);
         database.close();
+        return (int) insert;
     }
     public Contact getContact(int id)
     {
@@ -100,18 +107,20 @@ public class DBHelper  extends SQLiteOpenHelper
 
         //update the row
         //update(tablename, values, where id = 43)
-        return db.update(Util.DATABASE_TABLE_NAME, values, Util.KEY_ID + "=?",
+        int update = db.update(Util.DATABASE_TABLE_NAME, values, Util.KEY_ID + "=?",
                 new String[]{String.valueOf(contact.getId())});
+        db.close();
+            return update;
     }
 
     //Delete single contact
-    public void deleteContact(Contact contact) {
+    public int deleteContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.delete(Util.DATABASE_TABLE_NAME, Util.KEY_ID + "=?",
+        int delete = db.delete(Util.DATABASE_TABLE_NAME, Util.KEY_ID + "=?",
                 new String[]{String.valueOf(contact.getId())});
-
         db.close();
+        return delete;
     }
 
     //Get contacts count
@@ -121,5 +130,10 @@ public class DBHelper  extends SQLiteOpenHelper
         Cursor cursor = db.rawQuery(countQuery, null);
 
         return cursor.getCount();
+    }
+    public void PrintDbDetails()
+    {
+        SQLiteDatabase readableDatabase = getReadableDatabase();
+
     }
 }
