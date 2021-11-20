@@ -22,6 +22,7 @@ public class Activity_Detail extends AppCompatActivity {
         double rating = intent.getDoubleExtra("rating", 0.0);
         String details = intent.getStringExtra("details");
 
+
         ImageView imageView = findViewById(R.id.imageView);
         TextView data  = findViewById(R.id.textView5);
         RatingBar rating1 = findViewById(R.id.rating);

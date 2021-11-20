@@ -29,11 +29,14 @@ public class MainActivity extends AppCompatActivity
             new Person("Name :6 ",4.5,"This is Detail",R.drawable.image0)
     } ;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        String[] details =  getResources().getStringArray(R.array.friend_details);
+        String[] names =  getResources().getStringArray(R.array.friend_full_names);
+        Integer[] images = new Integer[]{R.drawable.chandler,R.drawable.joey,R.drawable.monica,R.drawable.phoebe,R.drawable.rachel,R.drawable.ross};
+        
     }
 
     public void picClick(View view)
@@ -51,6 +54,12 @@ public class MainActivity extends AppCompatActivity
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        intent.putExtra("name",persons[index].getName());
+        intent.putExtra("rating",persons[index].getRatings());
+        intent.putExtra("details",persons[index].getRatings());
+        intent.putExtra("img",persons[index].getImg());
+
         startActivity(intent);
     }
 }
