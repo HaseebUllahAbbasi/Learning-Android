@@ -35,8 +35,6 @@ public class Login extends AppCompatActivity {
 
             TextView status = findViewById(R.id.statusLogin);
             status.setText("Logged In Successfully");
-
-
         } else {
             TextView status = findViewById(R.id.statusLogin);
             status.setText("Not Logined");
@@ -49,6 +47,8 @@ public class Login extends AppCompatActivity {
 
         Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
+        finish();
+
 
     }
 

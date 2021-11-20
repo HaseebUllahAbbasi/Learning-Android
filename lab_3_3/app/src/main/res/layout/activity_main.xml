@@ -54,27 +54,15 @@
         android:id="@+id/eyesBox"
         android:layout_width="118dp"
         android:layout_height="49dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="44dp"
         android:text="@string/eyesbox"
         app:layout_constraintBottom_toTopOf="@+id/checkBox7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toEndOf="@+id/glassesBox"
+        app:layout_constraintHorizontal_bias="0.723"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/handsBox"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/body"
-        android:layout_width="382dp"
-        android:layout_height="429dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178"
-        app:srcCompat="@drawable/body" />
 
     <CheckBox
         android:id="@+id/hatBox"
@@ -130,6 +118,18 @@
         app:layout_constraintTop_toTopOf="@+id/shoesBox"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/body"
+        android:layout_width="382dp"
+        android:layout_height="429dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178"
+        app:srcCompat="@drawable/body" />
 
     <ImageView
         android:id="@+id/ears"
