@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dot.dot_db_android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Dot_db_android">
+        <activity android:name=".searchActivity"></activity>
+        <activity android:name=".updateActivity" />
+        <activity android:name=".deleteActivity" />
+        <activity
+            android:name=".ShowAllActivity"
+            android:label="@string/title_activity_search_screen"
+            android:theme="@style/Theme.Dot_db_android.NoActionBar" />
+        <activity android:name=".InsertionScreen" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

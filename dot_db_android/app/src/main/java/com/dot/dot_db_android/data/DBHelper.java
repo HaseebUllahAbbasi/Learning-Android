@@ -1,4 +1,4 @@
-package com.dot.dot_db_android;
+package com.dot.dot_db_android.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.icu.util.UniversalTimeScale;
 
 import androidx.annotation.Nullable;
 
+import com.dot.dot_db_android.R;
 import com.dot.dot_db_android.model.Contact;
 import com.dot.dot_db_android.util.Util;
 

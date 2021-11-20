@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertScreen"
+        android:text="insertButton" />
+
+    <Button
+        android:id="@+id/SelectAllButton"
+        android:layout_width="match_parent"
+        android:onClick="selectButton"
+        android:layout_height="wrap_content"
+        android:text="SelectAllButton" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="updateScreen"
+        android:text="updateButton" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deleteScreen"
+        android:text="deleteButton" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="searchScreen"
+        android:text="searchButton" />
+
+    <Button
+        android:id="@+id/countRecordsButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="countAll"
+        android:text="Count  Total Records" />
+
+    <TextView
+        android:id="@+id/textCountRecords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Records" />
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.dot.dot_db_android.data;
+package com.dot.dot_db_android.model;
 
 public class Contact
 {
@@ -12,14 +12,18 @@ public class Contact
         this.name = name;
     }
 
+    public Contact(String name, String phone) {
+        this
+                .phone = phone;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getPhone() {
         return phone;
     }
@@ -34,5 +38,14 @@ public class Contact
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", phone='" + phone + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
