@@ -6,19 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".register">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="LOGIN"
+        android:text="Register"
         android:textSize="36sp" />
 
     <EditText
-        android:id="@+id/loginemail"
+        android:id="@+id/registerEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,7 +26,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/loginpassword"
+        android:id="@+id/registerPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,17 +34,17 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="LoginNow"
-        android:text="login" />
+        android:onClick="register"
+        android:text="Register" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/loginnowbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="goToRegister"
-        android:text="register" />
+        android:onClick="backLog"
+        android:text="Login now" />
 
 </LinearLayout>
