@@ -23,8 +23,16 @@ public class InsertionScreen extends AppCompatActivity {
     public void insertData(View view) {
         EditText name = (EditText) findViewById(R.id.insertName);
         EditText phone = (EditText) findViewById(R.id.insertPass);
+        String nameString = name.getText().toString();
+        String phoneString = phone.getText().toString();
+
+        if(nameString.equals("") && phoneString.equals(""))
+        {
+            Toast.makeText(this, "Please Enter the Full Data", Toast.LENGTH_SHORT).show();
+            return;
+        }
         DataBaseHelper dataBaseHelper = new DataBaseHelper(this, Util.DATABASE_NAME, null, Util.DATABASE_VERSION);
-        int i = dataBaseHelper.addContact(new Contact(name.getText().toString(), phone.getText().toString()));
+        int i = dataBaseHelper.addContact(new Contact(nameString,phoneString ));
         if (i == 0)
             Toast.makeText(this, "Data Not Inserted ", Toast.LENGTH_SHORT).show();
         else

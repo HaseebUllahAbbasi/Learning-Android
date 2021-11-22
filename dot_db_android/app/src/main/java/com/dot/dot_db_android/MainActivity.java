@@ -81,4 +81,10 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, InsertionScreen.class);
         startActivity(intent);
     }
+
+    public void recyclerViewExample(View view) {
+        Intent intent = new Intent(this, RecyclerExample.class);
+        startActivity(intent);
+
+    }
 }
