@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/user_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User 1"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/user_1_cards"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_gravity="start"
+        android:orientation="horizontal"/>
+
+    <TextView
+        android:id="@+id/user_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User 2"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/user_2_cards"
+        android:layout_width="match_parent"
+        android:layout_height="274dp"
+        android:orientation="horizontal"/>
+
+    <TextView
+        android:id="@+id/turn_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turn of Player" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="HitMe"
+        android:text="Hit Me" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Stand"
+        android:text="Stand" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="reset"
+        android:text="Reset" />
+</LinearLayout>
