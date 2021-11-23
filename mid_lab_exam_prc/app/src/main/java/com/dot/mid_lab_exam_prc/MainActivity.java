@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else{
-            Toast.makeText(this, "MSG: Nikal Lorhu", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "MSG: Ap kahi or apni tashreef le jaye", Toast.LENGTH_LONG).show();
 
         }
 
