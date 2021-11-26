@@ -84,7 +84,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
         //Loop through our data
         if (cursor.moveToFirst()) {
             do {
-                Contact contact = new Contact("James", "213986");
+                Contact contact = new Contact("", "");
                 contact.setId(Integer.parseInt(cursor.getString(0)));
                 contact.setName(cursor.getString(1));
                 contact.setPhone(cursor.getString(2));

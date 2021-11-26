@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity
             R.drawable.ace, R.drawable.one, R.drawable.two,R.drawable.three,R.drawable.four,R.drawable.five,R.drawable.six,R.drawable.seven,R.drawable.eight, R.drawable.nine,R.drawable.jack,R.drawable.queen,R.drawable.king,
             R.drawable.ace, R.drawable.one, R.drawable.two,R.drawable.three,R.drawable.four,R.drawable.five,R.drawable.six,R.drawable.seven,R.drawable.eight, R.drawable.nine,R.drawable.jack,R.drawable.queen,R.drawable.king
     };
+    
 
     String user_1;
     String user_2;

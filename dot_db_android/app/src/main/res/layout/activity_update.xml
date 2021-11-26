@@ -12,6 +12,7 @@
         android:id="@+id/updateId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:hint="Enter ID"
         android:inputType="textPersonName" />
@@ -20,6 +21,7 @@
         android:id="@+id/updateName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName" />
@@ -28,6 +30,7 @@
         android:id="@+id/updatePhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:hint="Phone"
         android:inputType="textPersonName" />
@@ -36,6 +39,7 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:onClick="updateData"
         android:text="Update" />
 
@@ -43,6 +47,9 @@
         android:id="@+id/updateStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Status" />
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Update Status"
+        android:textSize="18sp" />
 
 </LinearLayout>
