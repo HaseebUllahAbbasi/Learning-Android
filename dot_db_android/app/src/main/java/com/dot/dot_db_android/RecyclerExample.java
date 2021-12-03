@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import com.dot.dot_db_android.data.DataBaseHelper;
@@ -31,5 +33,7 @@ public class RecyclerExample extends AppCompatActivity {
         recyclerViewAdapter = new RecyclerViewAdapter(this,allContacts);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
+
+
 
 }

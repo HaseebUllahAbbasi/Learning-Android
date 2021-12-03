@@ -5,17 +5,13 @@
 
     <item
         android:id="@+id/option_1"
-        android:title="Option 1"
         android:onClick="optionClicked"
+        android:title="Delete"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/option_2"
-        android:title="option_2"
+        android:title="View"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/option_3"
-        android:title="option_3"
-        app:showAsAction="never" />
 </menu>
