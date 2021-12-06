@@ -72,7 +72,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                             String title = note.getTitle();
                             String description = note.getDescription();
 
-
                         }
                         return true;
                     }
