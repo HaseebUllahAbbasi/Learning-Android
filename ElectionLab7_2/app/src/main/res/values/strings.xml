@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Election Lab7_2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="candidates">
+        <item>Hillary Clinton</item>
+        <item>Bernie Sanders</item>
+        <item>Martin OMalley</item>
+        <item>Lincoln Chafee</item>
+        <item>Donald Trump</item>
+        <item>Ban Carson</item>
+        <item>Marco Rubio</item>
+        <item>Jeb Bush</item>
+    </string-array>
+</resources>
