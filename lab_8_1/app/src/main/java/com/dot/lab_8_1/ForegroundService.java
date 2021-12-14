@@ -23,7 +23,8 @@ public class ForegroundService extends Service
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    public int onStartCommand(Intent intent, int flags, int startId)
+    {
         String input = intent.getStringExtra("inputExtra");
         createNotificationChannel();
         Intent notificationIntent = new Intent(this,MainActivity.class);
