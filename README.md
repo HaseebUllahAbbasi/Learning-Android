@@ -13,8 +13,37 @@
 
 ### [➡️ Election Task with Fragments (Lab_7_2)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/ElectionLab7_2)
 
-
 ### [➡️  Custom Adapter Example with Person Class   ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Arslan_3_DEC%20-%20Copy)
 
 ### [➡️ Number in ... Language (Lab_7_3)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/NumbersLab7_3)
+
+### [➡️ Guess The Number Game  (Lab_3_1)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_3_1)
+
+### [➡️ Memory Game (Lab_3_2)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/MemoryGame)
+
+### [➡️ Patato Game  (Lab_3_3)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_3_3)
+
+### [➡️ activity lifecycle   (Lab_4_1)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_4_1)
+
+
+### [➡️ Nexus Event Loki : Eat Cookies App   (Lab_4_2)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_4_2)
+
+
+
+### [➡️ Calculator Basic  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_4_4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
