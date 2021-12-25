@@ -1,6 +1,9 @@
 # Android Practice .🔥🕯️.
 ### this repo is practice of android course, experiments
 
+### [⏬ Downloading Link](https://haseebullahabbasi.github.io/DownGit-HU/#/home)
+  ` Just Click the Link above and copy the desired project and paste in the text field and hit download 
+  `
 ### [ ➡️ Notes Example with recycler view and custom adapter,realM objeccts  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/recyclerWithContectMenu)
 
 ### [➡️ Hang Man (Assignment 1)  ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Hangman)
