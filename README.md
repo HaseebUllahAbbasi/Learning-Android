@@ -36,6 +36,12 @@
 
 ### [➡️ Calculator Basic (Lab_4_3) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_4_4)
 
+### [➡️ (LAB 8 Tasks) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab8)
+
+### [➡️ (LAB 8 Tasks) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab9)
+
+### [➡️ (SMS SENDER / RECEIVER) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/SmsSender)
+
 
 
 
