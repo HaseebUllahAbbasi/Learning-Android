@@ -36,9 +36,20 @@
 
 ### [➡️ Calculator Basic (Lab_4_3) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_4_4)
 
+
+### [➡️ Writing and Reading from File Basic (Lab 6_1 ) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_6_1)
+
+
+### [➡️ Basic List Vew With Custom Adapter with Db  (Lab_7_1) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_7_1)
+
+### [➡️ Election Activity (Lab_7_2) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_7_2)
+
+### [➡️ Numbers in Diff Language with Audio (Lab_7_3) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_7_3)
+
+
 ### [➡️ (LAB 8 Tasks) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab8)
 
-### [➡️ (LAB 8 Tasks) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab9)
+### [➡️ (LAB 9 Tasks) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab9)
 
 ### [➡️ (SMS SENDER / RECEIVER) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/SmsSender)
 
