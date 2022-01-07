@@ -47,6 +47,15 @@
 ### [➡️ Numbers in Diff Language with Audio (Lab_7_3) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/lab_7_3)
 
 
+### [➡️ Stop Watch with Handler   (Lab_8_1) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab8/StopWatchLab8_1)
+
+### [➡️ Image Rotation with Basic Animation (Lab_8_2) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab8/RotateImageLab8_2)
+
+### [➡️ Music Player with Notification and Play Button  (Lab_8_3) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab8/MusicPlayerLab8_3)
+
+### [➡️ Alarm Manager  (Lab_8_4) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab8/AlarmLab8_4)
+
+
 ### [➡️ (LAB 8 Tasks) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab8)
 
 ### [➡️ (LAB 9 Tasks) ](https://github.com/HaseebUllahAbbasi/MAD/tree/main/Lab9)
