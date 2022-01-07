@@ -6,20 +6,26 @@ import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
 
 
+    LinearLayout layout;
     public static final Uri CONTENT_URI = Uri.parse("content://"+"com.dot.myProvider"+"/emp");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        layout =  findViewById(R.id.layout_second);
     }
 
     public void loadData(View view)
@@ -36,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         }
 //        Toast.makeText(this,builder.toString() ,Toast.LENGTH_LONG) .show();
         TextView textView  =  findViewById(R.id.textView);
-        textView.setText(builder.toString());
+        Snackbar.make(layout,builder,Snackbar.LENGTH_LONG).show();
+        Log.d(TAG, "loadData: "+builder.toString());
+//        textView.setText(builder.toString());
 
     }
 }

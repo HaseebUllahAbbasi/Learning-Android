@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_second"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,14 +12,19 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="274dp"
-        android:text="TextView" />
+        android:layout_height="152dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="Im Here to Consume"
+        android:textSize="36sp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:onClick="loadData"
-        android:text="Button" />
+        android:text="Load"
+        app:cornerRadius="10dp" />
 
 </LinearLayout>
