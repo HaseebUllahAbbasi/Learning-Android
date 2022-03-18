@@ -1,9 +1,11 @@
-package ch.ethz.inf.vs.a1.rubfisch.p2pchat;
+package com.dot.dot_chat_1;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pDeviceList;
@@ -13,7 +15,6 @@ import android.net.wifi.p2p.WifiP2pManager;
 import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.net.wifi.p2p.WifiP2pManager.PeerListListener;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,7 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BroadcastReceiverActivity extends AppCompatActivity implements WifiP2pManager.ConnectionInfoListener{
+public class BroadcastReceiverActivity extends AppCompatActivity implements WifiP2pManager.ConnectionInfoListener {
     WifiP2pManager mManager;
     Channel mChannel;
     BroadcastReceiver mReceiver;
@@ -61,7 +65,7 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
             ArrayList<WifiP2pDevice> peersNameFixed = new ArrayList<WifiP2pDevice>();
 
             for (WifiP2pDevice peer : peerList.getDeviceList()) {
-                String newDeviceName = peer.deviceName.replace("[Phone]","");
+                String newDeviceName = peer.deviceName.replace("[Phone]", "");
                 peer.deviceName = newDeviceName;
             }
             peers = new WifiP2pDeviceList(peerList);
@@ -80,8 +84,8 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
             // peers, trigger an update.
             //((WiFiPeerListAdapter) getListAdapter()).notifyDataSetChanged();
             //if (peers.size() == 0) {
-                //no devices found
-                //return;
+            //no devices found
+            //return;
             //}
         }
     };
@@ -96,13 +100,12 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
         bv.setBackgroundColor(getResources().getColor(R.color.colorLightGrey));
 
 
-
         // get name entered by user in MainActivity
         Bundle extras = getIntent().getExtras();
         name = extras.getString("nameText");
 
         TextView youAreLoggedInTextView = (TextView) findViewById(R.id.loggedIn);
-        youAreLoggedInTextView.setText("You are logged in as " +  name);
+        youAreLoggedInTextView.setText("You are logged in as " + name);
 
         getSupportActionBar().setTitle("New Chat");
 
@@ -111,25 +114,36 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
         mReceiver = new WifiBroadcastReceiver(mManager, mChannel, this, peerListListener);  //Setting up Wifi Receiver
 
         if (mManager != null && mChannel != null) {
-            mManager.requestGroupInfo(mChannel, new WifiP2pManager.GroupInfoListener() {
-                @Override
-                public void onGroupInfoAvailable(WifiP2pGroup group) {
-                    if (group != null && mManager != null && mChannel != null) {
-                        mManager.removeGroup(mChannel, new WifiP2pManager.ActionListener() {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-                            @Override
-                            public void onSuccess() {
-                                Log.d(TAG, "removeGroup onSuccess -");
-                            }
+                mManager.requestGroupInfo(mChannel, new WifiP2pManager.GroupInfoListener() {
+                    @Override
+                    public void onGroupInfoAvailable(WifiP2pGroup group) {
+                        if (group != null && mManager != null && mChannel != null) {
+                            mManager.removeGroup(mChannel, new WifiP2pManager.ActionListener() {
 
-                            @Override
-                            public void onFailure(int reason) {
-                                Log.d(TAG, "removeGroup onFailure -" + reason);
-                            }
-                        });
+                                @Override
+                                public void onSuccess() {
+                                    Log.d(TAG, "removeGroup onSuccess -");
+                                }
+
+                                @Override
+                                public void onFailure(int reason) {
+                                    Log.d(TAG, "removeGroup onFailure -" + reason);
+                                }
+                            });
+                        }
                     }
-                }
-            });
+                });
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
         }
 
         mIntentFilter = new IntentFilter();
@@ -169,7 +183,7 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
             }
         });
         mListView = (ListView) findViewById(R.id.ListView);
-        TextView emptyText = (TextView)findViewById(android.R.id.empty);
+        TextView emptyText = (TextView) findViewById(android.R.id.empty);
         mListView.setEmptyView(emptyText);
         WifiP2parrayAdapter = new ArrayAdapter<String>(this, R.layout.fragment_peer, R.id.textView);
 
@@ -183,20 +197,16 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
                 //Get string from textview
                 TextView tv = ((LinearLayout) arg1).findViewById(R.id.textView);
                 WifiP2pDevice device = null;
-                for(WifiP2pDevice wd : peers.getDeviceList())
-                {
-                    if(wd.deviceName.equals(tv.getText()))
+                for (WifiP2pDevice wd : peers.getDeviceList()) {
+                    if (wd.deviceName.equals(tv.getText()))
                         device = wd;
                 }
-                if(device != null)
-                {
+                if (device != null) {
                     Log.d(TAG, " calling connectToPeer");
                     //Connect to selected peer
                     connectToPeer(device);
 
-                }
-                else
-                {
+                } else {
                     //dialog.setMessage("Failed");
                     //dialog.show();
 
@@ -208,25 +218,24 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
         receiveConnectRequest.execute();
 
 
-
     }
 
 
-    public void connectToPeer(final WifiP2pDevice wifiPeer)
-    {
+    public void connectToPeer(final WifiP2pDevice wifiPeer) {
         this.ConnectedPartner = wifiPeer;
         final WifiP2pConfig config = new WifiP2pConfig();
         config.deviceAddress = wifiPeer.deviceAddress;
-        mManager.connect(mChannel, config, new WifiP2pManager.ActionListener()  {
-            public void onSuccess() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            mManager.connect(mChannel, config, new WifiP2pManager.ActionListener()
+            {
+                public void onSuccess() {
                 /*Log.d(TAG, "Transitioning to Chat Activity");
                 Intent intent = new Intent(BroadcastReceiverActivity.this, ChatActivity.class);
                 intent.putExtra("info", info);
                 startActivity(intent);*/
 
 
-
-                // TODO: Msg saying "Waiting for *name* to respond."
+                    // TODO: Msg saying "Waiting for *name* to respond."
                 /*AsyncTask<Void, Void, Void> sendConnectRequest = new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
@@ -281,14 +290,24 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
                 sendConnectRequest.execute();
                 //setClientStatus("Connection to " + targetDevice.deviceName + " sucessful");
                 */
-            }
+                }
 
-            public void onFailure(int reason) {
-                //setClientStatus("Connection to " + targetDevice.deviceName + " failed");
-                //TODO: Notify the user the connection failed.
+                public void onFailure(int reason) {
+                    //setClientStatus("Connection to " + targetDevice.deviceName + " failed");
+                    //TODO: Notify the user the connection failed.
 
-            }
-        });
+                }
+            });
+
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
 
     }
 
@@ -318,7 +337,7 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
         if (info.groupFormed) {
             Intent intent = new Intent(BroadcastReceiverActivity.this, ChatActivity.class);
             intent.putExtra("info", info);
-            intent.putExtra("name",name);
+            intent.putExtra("name", name);
             startActivityForResult(intent, 1);
         }
 
@@ -326,46 +345,67 @@ public class BroadcastReceiverActivity extends AppCompatActivity implements Wifi
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if (mManager != null && mChannel != null) {
-                mManager.requestGroupInfo(mChannel, new WifiP2pManager.GroupInfoListener() {
-                    @Override
-                    public void onGroupInfoAvailable(WifiP2pGroup group) {
-                        if (group != null && mManager != null && mChannel != null) {
-                            mManager.removeGroup(mChannel, new WifiP2pManager.ActionListener() {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    mManager.requestGroupInfo(mChannel, new WifiP2pManager.GroupInfoListener() {
+                        @Override
+                        public void onGroupInfoAvailable(WifiP2pGroup group) {
+                            if (group != null && mManager != null && mChannel != null) {
+                                mManager.removeGroup(mChannel, new WifiP2pManager.ActionListener() {
 
-                                @Override
-                                public void onSuccess() {
-                                    Log.d(TAG, "removeGroup onSuccess2 -");
-                                }
+                                    @Override
+                                    public void onSuccess() {
+                                        Log.d(TAG, "removeGroup onSuccess2 -");
+                                    }
 
-                                @Override
-                                public void onFailure(int reason) {
-                                    Log.d(TAG, "removeGroup onFailure2 -" + reason);
-                                }
-                            });
+                                    @Override
+                                    public void onFailure(int reason) {
+                                        Log.d(TAG, "removeGroup onFailure2 -" + reason);
+                                    }
+                                });
+                            }
                         }
-                    }
-                });
+                    });
+
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
             }
         }
     }
 
 
-
-
     public void onRefresh(View view) {
-        mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
-            @Override
-            public void onSuccess() {
-                //will not provide info about who it discovered
-            }
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
+                @Override
+                public void onSuccess() {
+                    //will not provide info about who it discovered
+                }
 
-            @Override
-            public void onFailure(int reasonCode) {
+                @Override
+                public void onFailure(int reasonCode) {
 
-            }
-        });
+                }
+            });
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+
     }
 
      AsyncTask<Void, Void, Void> receiveConnectRequest = new AsyncTask<Void, Void, Void>() {

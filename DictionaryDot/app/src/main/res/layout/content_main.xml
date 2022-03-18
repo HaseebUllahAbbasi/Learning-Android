@@ -8,11 +8,23 @@
     tools:showIn="@layout/app_bar_main"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/searchText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter word"
+
+        android:inputType="textPersonName"
+        android:text="" />
 
     <ListView
         android:id="@+id/listView_1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+
+    </ListView>
 
     <fragment
         android:id="@+id/nav_host_fragment"

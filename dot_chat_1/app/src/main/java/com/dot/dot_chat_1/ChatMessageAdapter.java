@@ -1,4 +1,4 @@
-package ch.ethz.inf.vs.a1.rubfisch.p2pchat;
+package com.dot.dot_chat_1;
 
 /**
  * Created by ruben on 04.12.17.

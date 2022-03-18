@@ -1,4 +1,4 @@
-package ch.ethz.inf.vs.a1.rubfisch.p2pchat;
+package com.dot.dot_chat_1;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -10,7 +10,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.Menu;
@@ -20,6 +19,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
 import java.io.IOException;

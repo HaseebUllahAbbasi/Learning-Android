@@ -1,4 +1,4 @@
-package ch.ethz.inf.vs.a1.rubfisch.p2pchat;
+package com.dot.dot_chat_1;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

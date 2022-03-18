@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         Uri uri =  getContentResolver().insert(CustomProvider.CONTENT_URI,values);
 
         Toast.makeText(this,uri.toString(),Toast.LENGTH_LONG).show();
-
-
     }
 
     public void load(View view)
@@ -54,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             String s2 = cr.getString(2);
             builder.append(id+ " " + s1+ " "+ s2+ "\n");
         }
-//        Toast.makeText(this,builder.toString() ,Toast.LENGTH_LONG) .show();
         Snackbar.make(layout,builder.toString(),Snackbar.LENGTH_LONG).show();
     }
 }

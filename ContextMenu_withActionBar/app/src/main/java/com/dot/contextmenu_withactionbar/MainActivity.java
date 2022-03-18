@@ -1,7 +1,11 @@
 package com.dot.contextmenu_withactionbar;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.Menu;
@@ -16,16 +20,20 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
+    private static final String CHANNEL_ID = "StringID" ;
     ListView listView;
     ArrayAdapter<String> arrayAdapter;
     List<String> list =  new ArrayList<>();
 
     List<String> userSelection = new  ArrayList();
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        NotificationChannel serviceChannel = new NotificationChannel(CHANNEL_ID,"ForeGroundService Channel ", NotificationManager.IMPORTANCE_LOW);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listView);
@@ -33,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setMultiChoiceModeListener(modeListener);
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,list);
         listView.setAdapter(arrayAdapter);
+//        CustomAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,null);
+//        listView.removeViewAt(0);
+//        adapter.notifyDataSetChanged();
+
     }
     public void getItems()
     {
@@ -42,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             list.add(item);
 
         }
+
 
     }
     public void removeItem()
@@ -95,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-}
 
+}
 /**
  https://www.youtube.com/watch?v=v69ozl2Jfoo
  **/

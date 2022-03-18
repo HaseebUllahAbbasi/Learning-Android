@@ -18,8 +18,13 @@ import androidx.appcompat.widget.Toolbar;
 
 public class Navigate_Activity extends AppCompatActivity {
 
+    CustomDialog dialog = new CustomDialog();
+
     private AppBarConfiguration mAppBarConfiguration;
 
+    private void openDialog() {
+        dialog.show(getSupportFragmentManager(), "Enter Word");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +35,10 @@ public class Navigate_Activity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                openDialog();
+//
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -59,5 +66,13 @@ public class Navigate_Activity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+
+    public void saveWord(View view)
+    {
+
+        dialog.dismiss();
+
     }
 }

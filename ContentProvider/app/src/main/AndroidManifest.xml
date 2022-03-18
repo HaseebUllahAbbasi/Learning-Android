@@ -9,23 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ContentProvider">
-        <provider
-            android:name=".CustomProvider"
-            android:authorities="com.dot.myProvider"
-            android:enabled="true"
-            android:exported="true"></provider>
-<!--        <provider-->
-<!--            android:name=".StudentsProvider"-->
-<!--            android:authorities="com.example.MyApplication.StudentsProvider"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true" />-->
+        <activity
+            android:name=".Navigate_Activity"
+            android:label="@string/title_activity_navigate_"
+            android:theme="@style/Theme.ContentProvider.NoActionBar">
 
-        <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".CustomProvider"
+            android:authorities="com.dot.myProvider"
+            android:enabled="true"
+            android:exported="true" /> <!-- <provider -->
+        <!-- android:name=".StudentsProvider" -->
+        <!-- android:authorities="com.example.MyApplication.StudentsProvider" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" /> -->
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

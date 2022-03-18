@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/about.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/categories.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/category_list_item.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/flashcard_fragment.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/multiple_choice_fragment_fixed_buttons.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/multiple_choice_fragment_scroll_buttons.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/question_content.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Haseeb/Documents/MAD/QuizApp/app/src/main/res/layout/quiz.xml" value="0.29322916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
